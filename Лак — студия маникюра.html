@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Лак — студия маникюра</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500&display=swap">
+<style>
+:root{--bg:#f1ecf6;--surface:#fff;--ink:#2b1a36;--muted:#6d5b7a;--accent:#e23d6e;--accent-ink:#fff;--line:#d9cfe3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1124;--surface:#291836;--ink:#f3eaf8;--muted:#b7a5c6;--accent:#ff5c8a;--accent-ink:#2b1a36;--line:#432a55;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1124;--surface:#291836;--ink:#f3eaf8;--muted:#b7a5c6;--accent:#ff5c8a;--accent-ink:#2b1a36;--line:#432a55;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Onest,system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+h1,h2{font-family:Unbounded,system-ui,sans-serif;font-weight:700;line-height:1.1;margin:0}
+h1{font-size:clamp(34px,8vw,68px);letter-spacing:-.02em}
+h2{font-size:clamp(24px,4.5vw,36px);margin-bottom:28px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:700 20px Unbounded,sans-serif}
+a{color:inherit}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:14px 28px;font:500 17px Onest,sans-serif;text-decoration:none;cursor:pointer}
+.btn:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.hero{padding:36px 0 64px}
+.hero p{max-width:460px;color:var(--muted);margin:22px 0 28px;font-size:19px}
+.nails{display:flex;gap:clamp(8px,2vw,18px);align-items:flex-end;margin-top:48px}
+.nails i{flex:1;max-width:120px;border-radius:999px 999px 28px 28px;position:relative}
+.nails i::after{content:"";position:absolute;left:18%;top:8%;width:16%;height:38%;background:rgba(255,255,255,.45);border-radius:99px}
+.nails i:nth-child(1){height:150px;background:#e23d6e}
+.nails i:nth-child(2){height:200px;background:#7b3fa0}
+.nails i:nth-child(3){height:225px;background:#f4b6c8}
+.nails i:nth-child(4){height:190px;background:#3fb59a}
+.nails i:nth-child(5){height:130px;background:#f2c14e}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.price{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.price b{font-weight:500}
+.price span{color:var(--muted);display:block;font-size:15px}
+.price em{font:500 17px Unbounded,sans-serif;font-style:normal;white-space:nowrap}
+.book{background:var(--surface);border-radius:28px;padding:clamp(22px,5vw,44px);display:grid;gap:14px;max-width:520px}
+label{display:grid;gap:6px;font-weight:500}
+input,select{font:400 17px Onest,sans-serif;padding:13px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+#ok{display:none;color:var(--accent);font-weight:500;margin:0}
+.contacts{color:var(--muted)}
+footer{padding:32px 0 48px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">Лак</div><a class="btn" href="#book">Записаться</a></header>
+
+<div class="hero">
+<h1>Маникюр, который держится три недели</h1>
+<p>Студия на пять кресел. Стерильные инструменты, аккуратная работа и цвета, которые хочется носить.</p>
+<a class="btn" href="#book">Выбрать время</a>
+<div class="nails" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+
+<section id="prices">
+<h2>Услуги и цены</h2>
+<div class="price"><div><b>Классический маникюр</b><span>Обработка кутикулы, форма, уход</span></div><em>1 500 ₽</em></div>
+<div class="price"><div><b>Маникюр с гель-лаком</b><span>Покрытие в один цвет, до 3 недель</span></div><em>2 500 ₽</em></div>
+<div class="price"><div><b>Дизайн</b><span>Френч, градиент, стразы, рисунок</span></div><em>от 300 ₽</em></div>
+<div class="price"><div><b>Наращивание</b><span>Гелевая система, любая длина</span></div><em>4 200 ₽</em></div>
+<div class="price"><div><b>Педикюр с покрытием</b><span>Аппаратный, с гель-лаком</span></div><em>3 300 ₽</em></div>
+</section>
+
+<section id="book">
+<h2>Запись онлайн</h2>
+<div class="book">
+<label>Имя<input id="n" autocomplete="name"></label>
+<label>Телефон<input id="p" type="tel" autocomplete="tel" placeholder="+7"></label>
+<label>Услуга<select id="s"><option>Классический маникюр</option><option>Маникюр с гель-лаком</option><option>Наращивание</option><option>Педикюр с покрытием</option></select></label>
+<label>Удобная дата<input id="d" type="date"></label>
+<button class="btn" id="go" type="button">Записаться</button>
+<p id="ok" role="status"></p>
+</div>
+</section>
+
+<section class="contacts">
+<h2>Как нас найти</h2>
+<p>ул. Садовая, 12, второй этаж<br>Ежедневно с 10:00 до 21:00<br>+7 (900) 000-00-00</p>
+</section>
+<footer>© 2026 Студия «Лак»</footer>
+</div>
+<script>
+document.getElementById('go').addEventListener('click',function(){
+var n=document.getElementById('n').value.trim(),p=document.getElementById('p').value.trim(),o=document.getElementById('ok');
+o.style.display='block';
+o.textContent=(n&&p)?('Спасибо, '+n+'! Мы позвоним на '+p+' и подтвердим запись.'):'Заполните имя и телефон, чтобы мы могли подтвердить запись.';
+});
+</script>
+</body>
+</html>
